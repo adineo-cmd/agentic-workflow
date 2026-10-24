@@ -1,0 +1,15 @@
+{
+  "$comment": "Universal MCP server definitions — GitHub personal (adineo-cmd) + work (adineo-cmd2) accounts. Same wrapper scripts are wired into every agent. To rotate a token, replace the file in ~/.config/mcp/secrets/ — no config edits needed. This file uses the standard mcpServers schema (Claude Code / Cursor / Windsurf shape) and serves as the reference copy for wiring up new agents.",
+  "mcpServers": {
+    "github-personal": {
+      "command": "/home/aditya/.config/mcp/github-personal.sh",
+      "args": [],
+      "env": {}
+    },
+    "github-work": {
+      "command": "/home/aditya/.config/mcp/github-work.sh",
+      "args": [],
+      "env": {}
+    }
+  }
+}

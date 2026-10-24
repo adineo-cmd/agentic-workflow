@@ -1,0 +1,21 @@
+# Two GitHub accounts on one host.
+# Same HostName (github.com), different keys — SSH matches by Host alias,
+# so the remote URL decides which account is used:
+#   git@github-personal:adineo-cmd/repo.git   -> personal key
+#   git@github-work:adineo-cmd2/repo.git      -> work key
+
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github_personal
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    HostKeyAlias github.com
+
+Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github_work
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    HostKeyAlias github.com

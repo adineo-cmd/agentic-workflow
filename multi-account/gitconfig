@@ -1,0 +1,20 @@
+[user]
+	name = adineo-cmd
+	email = your-email@example.com
+
+# Per-remote commit identity. The remote URL decides which GitHub account
+# (and therefore which identity) a repo uses.
+#   git@github-personal:owner/repo.git  -> ~/.gitconfig-personal
+#   git@github-work:owner/repo.git     -> ~/.gitconfig-work
+# Requires git >= 2.36. Pattern needs a path component: "*/**".
+[includeIf "hasconfig:remote.*.url:git@github-personal:*/**"]
+	path = ~/.gitconfig-personal
+
+[includeIf "hasconfig:remote.*.url:git@github-personal:*"]
+	path = ~/.gitconfig-personal
+
+[includeIf "hasconfig:remote.*.url:git@github-work:*/**"]
+	path = ~/.gitconfig-work
+
+[includeIf "hasconfig:remote.*.url:git@github-work:*"]
+	path = ~/.gitconfig-work
